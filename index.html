@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SAG Consultores: servicios contables, fiscales, nómina, IMSS, INFONAVIT, devolución de IVA y consultoría empresarial en Ciudad de México y Pachuca.">
+<meta name="keywords" content="SAG Consultores, contador, contabilidad, fiscal, nómina, IMSS, INFONAVIT, devolución IVA, Pachuca, Ciudad de México">
+<meta name="author" content="SAG Consultores">
+<meta property="og:title" content="SAG Consultores | Contabilidad, Fiscal y Consultoría">
+<meta property="og:description" content="Soluciones contables, fiscales, laborales y financieras para empresas.">
+<meta property="og:type" content="website">
+<title>SAG Consultores | Contabilidad, Fiscal, Nómina y Consultoría</title>
+<style>
+:root{--navy:#081c35;--blue:#1266a7;--cyan:#19b5d1;--gold:#d8aa42;--bg:#f4f7fa;--text:#26384b;--muted:#6a7b8d;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6;background:#fff}
+.container{width:min(1180px,92%);margin:auto}
+.top{background:#061528;color:#c9d6e3;font-size:12px;padding:7px 0}.top-flex{display:flex;justify-content:space-between;gap:20px}
+header{position:sticky;top:0;z-index:99;background:rgba(8,28,53,.97);box-shadow:0 3px 20px #0002}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;color:white;font-weight:800;font-size:18px}.logo-mark{width:46px;height:46px;border:2px solid var(--cyan);border-radius:11px;display:grid;place-items:center;font-size:14px;letter-spacing:-1px}.logo em{color:var(--cyan);font-style:normal}
+nav ul{display:flex;gap:24px;list-style:none;color:#fff;font-size:14px}nav a:hover{color:var(--cyan)}
+.hero{background:linear-gradient(120deg,#06162c,#0b3157 60%,#1266a7);color:#fff;padding:92px 0 105px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}.badge{display:inline-block;border:1px solid #ffffff35;border-radius:30px;padding:7px 14px;color:#9ce9f5;font-size:12px;font-weight:700;letter-spacing:1px}
+h1{font-size:clamp(39px,5.2vw,65px);line-height:1.05;margin:20px 0}.hero p{font-size:19px;color:#dce8f1;max-width:680px}
+.buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-block;padding:13px 22px;border-radius:8px;font-weight:800;transition:.2s}.btn:hover{transform:translateY(-2px)}
+.primary{background:var(--cyan);color:#06223a}.outline{border:1px solid #ffffff55;color:#fff}
+.hero-panel{padding:31px;border-radius:18px;background:#ffffff12;border:1px solid #ffffff25;backdrop-filter:blur(8px)}
+.hero-panel h3{font-size:22px;margin-bottom:13px}.hero-panel li{list-style:none;padding:10px 0;border-bottom:1px solid #ffffff18}.hero-panel li:last-child{border:0}
+section{padding:80px 0}.alt{background:var(--bg)}.head{text-align:center;max-width:760px;margin:0 auto 45px}.eyebrow{color:var(--blue);font-weight:900;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}.head h2{font-size:38px;line-height:1.15;color:var(--navy);margin:9px 0 12px}.head p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{border:1px solid #e2e9ef;border-radius:15px;padding:28px;background:#fff;box-shadow:0 8px 28px #0b315711}.icon{width:49px;height:49px;display:grid;place-items:center;background:#e9f8fb;color:var(--blue);border-radius:12px;font-weight:900;font-size:21px;margin-bottom:17px}.card h3{color:var(--navy);margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}.about h2{font-size:39px;color:var(--navy);line-height:1.15;margin:8px 0 17px}.checks{display:grid;gap:13px;margin-top:25px}.check{display:flex;gap:12px}.check b{color:var(--blue)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}.stat{background:#fff;border:1px solid #e1e8ef;border-radius:14px;padding:28px;text-align:center}.stat strong{display:block;color:var(--blue);font-size:29px}.stat span{font-size:13px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{padding:25px;border-radius:14px;border:1px solid #e0e8ef}.step-number{font-size:13px;color:var(--blue);font-weight:900}.step h3{color:var(--navy);margin:7px 0}.step p{font-size:14px;color:var(--muted)}
+.cta{background:linear-gradient(120deg,#081c35,#1266a7);color:#fff;text-align:center}.cta h2{font-size:38px}.cta p{max-width:720px;margin:10px auto;color:#dce8f2}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}.box{border:1px solid #e1e8ef;border-radius:15px;padding:30px}.box h3{color:var(--navy);margin-bottom:15px}.item{padding:12px 0;border-bottom:1px solid #edf1f4}.item:last-child{border:0}.item strong{display:block;color:var(--blue);font-size:11px;text-transform:uppercase;letter-spacing:1px}
+form{display:grid;gap:12px}input,textarea{width:100%;padding:13px;border:1px solid #d6e0e8;border-radius:8px;font:inherit}textarea{min-height:130px;resize:vertical}button{border:0;cursor:pointer;font:inherit}
+footer{background:#061528;color:#b9c7d4;padding:30px 0}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px}
+.whatsapp{position:fixed;right:22px;bottom:22px;z-index:90;background:#19a76b;color:#fff;padding:13px 17px;border-radius:50px;font-weight:900;box-shadow:0 5px 20px #0003}
+@media(max-width:850px){nav ul{display:none}.hero-grid,.about,.contact{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.top-flex{justify-content:center}.top-flex div:first-child{display:none}}
+@media(max-width:560px){.cards,.steps{grid-template-columns:1fr}section{padding:60px 0}.head h2,.about h2,.cta h2{font-size:30px}.hero{padding:65px 0 75px}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="container top-flex"><div>Atención profesional para empresas y negocios</div><div>CDMX · Pachuca, Hidalgo</div></div></div>
+
+<header>
+<div class="container nav">
+<a class="logo" href="#inicio"><div class="logo-mark">SAG</div><div>SAG <em>Consultores</em></div></a>
+<nav><ul><li><a href="#servicios">Servicios</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#iva">Devolución IVA</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+<div class="container hero-grid">
+<div>
+<span class="badge">CONTABILIDAD · FISCAL · NÓMINA · CONSULTORÍA</span>
+<h1>Convierte tus números en mejores decisiones.</h1>
+<p>SAG Consultores acompaña a empresas y empresarios con soluciones contables, fiscales, laborales y financieras orientadas al cumplimiento, control y crecimiento.</p>
+<div class="buttons"><a class="btn primary" href="#contacto">Solicitar asesoría</a><a class="btn outline" href="#servicios">Ver servicios</a></div>
+</div>
+<div class="hero-panel">
+<h3>Soluciones empresariales</h3>
+<ul>
+<li>✓ Contabilidad y declaraciones</li><li>✓ Planeación y consultoría fiscal</li><li>✓ Nómina, IMSS e INFONAVIT</li><li>✓ Devolución y recuperación de IVA</li><li>✓ Controles administrativos y financieros</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="servicios">
+<div class="container">
+<div class="head"><div class="eyebrow">Servicios</div><h2>Una solución integral para tu empresa</h2><p>Servicios profesionales diseñados para reducir riesgos, mejorar controles y facilitar la administración.</p></div>
+<div class="cards">
+<div class="card"><div class="icon">▣</div><h3>Contabilidad</h3><p>Registro, conciliación, cierres, análisis y reportes contables para apoyar la toma de decisiones.</p></div>
+<div class="card"><div class="icon">%</div><h3>Consultoría fiscal</h3><p>Cumplimiento, revisión de obligaciones y análisis de alternativas fiscales dentro del marco legal.</p></div>
+<div class="card"><div class="icon">▤</div><h3>Nómina y seguridad social</h3><p>Procesamiento y control de nómina, IMSS, INFONAVIT, FONACOT e impuestos relacionados.</p></div>
+<div class="card"><div class="icon">↺</div><h3>Devolución de IVA</h3><p>Diagnóstico, integración documental y acompañamiento en procesos de devolución de IVA.</p></div>
+
+<div class="card"><div class="icon">✓</div><h3>Control empresarial</h3><p>Diseño y mejora de procesos administrativos para fortalecer la operación y disminuir contingencias.</p></div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="nosotros">
+<div class="container about">
+<div>
+<div class="eyebrow">Quiénes somos</div><h2>Tu información contable debe ayudarte a dirigir, no sólo a cumplir.</h2>
+<p>SAG Consultores trabaja con una visión empresarial: conocer la operación, identificar riesgos y transformar la información contable, fiscal y financiera en herramientas útiles.</p>
+<div class="checks"><div class="check"><b>01</b><span>Atención profesional y personalizada.</span></div><div class="check"><b>02</b><span>Enfoque preventivo y orientado a resultados.</span></div><div class="check"><b>03</b><span>Soluciones adaptadas a cada negocio.</span></div><div class="check"><b>04</b><span>Acompañamiento en cumplimiento y control.</span></div></div>
+</div>
+<div class="stats"><div class="stat"><strong>360°</strong><span>Visión integral</span></div><div class="stat"><strong>CDMX</strong><span>Atención empresarial</span></div><div class="stat"><strong>Pachuca</strong><span>Zona de atención</span></div><div class="stat"><strong>SAG</strong><span>Enfoque profesional</span></div></div>
+</div>
+</section>
+
+<section id="iva">
+<div class="container">
+<div class="head"><div class="eyebrow">Especialidad</div><h2>Devolución de IVA</h2><p>Analizamos la situación de la empresa para identificar oportunidades de recuperación y preparar un expediente sólido, siempre conforme a las disposiciones fiscales aplicables.</p></div>
+<div class="cards">
+<div class="card"><h3>1. Diagnóstico</h3><p>Revisión de operaciones, saldos y documentación disponible para determinar la viabilidad del trámite.</p></div>
+<div class="card"><h3>2. Integración</h3><p>Organización de información contable, fiscal y documental necesaria para sustentar la solicitud.</p></div>
+<div class="card"><h3>3. Acompañamiento</h3><p>Seguimiento del proceso y atención de requerimientos relacionados con el expediente.</p></div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="proceso">
+<div class="container">
+<div class="head"><div class="eyebrow">Metodología</div><h2>Así trabajamos contigo</h2><p>Un proceso claro para conocer el problema, proponer soluciones y dar seguimiento.</p></div>
+<div class="steps">
+<div class="step"><span class="step-number">01 · CONOCER</span><h3>Diagnóstico</h3><p>Entendemos la actividad, estructura y necesidades del negocio.</p></div>
+<div class="step"><span class="step-number">02 · ANALIZAR</span><h3>Evaluación</h3><p>Detectamos riesgos, áreas de oportunidad y prioridades.</p></div>
+<div class="step"><span class="step-number">03 · PROPONER</span><h3>Solución</h3><p>Definimos acciones, controles y servicios adecuados.</p></div>
+<div class="step"><span class="step-number">04 · ACOMPAÑAR</span><h3>Seguimiento</h3><p>Medimos avances y ajustamos la estrategia cuando sea necesario.</p></div>
+</div>
+</div>
+</section>
+
+<section class="cta"><div class="container"><h2>¿Tu empresa está lista para tener mayor control?</h2><p>Agenda una conversación con SAG Consultores y revisemos tus principales necesidades contables, fiscales y administrativas.</p><div class="buttons" style="justify-content:center"><a class="btn primary" href="#contacto">Solicitar asesoría</a></div></div></section>
+
+<section id="contacto">
+<div class="container">
+<div class="head"><div class="eyebrow">Contacto</div><h2>Hablemos de tu empresa</h2><p>Solicita información o una primera conversación sobre nuestros servicios.</p></div>
+<div class="contact">
+<div class="box"><h3>SAG Consultores</h3>
+<div class="item"><strong>Responsable</strong>L.C. y E.F. Santiago Arellano Guerrero</div>
+<div class="item"><strong>Correo</strong><a href="mailto:sag2009@live.com.mx">sag2009@live.com.mx</a></div>
+<div class="item"><strong>Teléfono</strong><a href="tel:+525513369327">55 13 36 93 27</a></div>
+<div class="item"><strong>Atención</strong>Ciudad de México y Pachuca, Hidalgo</div>
+</div>
+<div class="box"><h3>Solicita asesoría</h3>
+<form onsubmit="send(event)">
+<input id="name" required placeholder="Nombre o empresa"><input id="email" required type="email" placeholder="Correo electrónico"><input id="phone" placeholder="Teléfono"><textarea id="msg" required placeholder="Cuéntanos brevemente qué necesitas"></textarea><button class="btn primary" type="submit">Enviar consulta</button>
+</form></div>
+</div>
+</div>
+</section>
+</main>
+
+<a class="whatsapp" href="https://wa.me/525513369327?text=Hola%20SAG%20Consultores%2C%20me%20interesa%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener">WhatsApp</a>
+
+<footer><div class="container foot"><div>© 2026 SAG Consultores · Todos los derechos reservados.</div><div>Contabilidad · Fiscal · Nómina · Consultoría</div></div></footer>
+
+<script>
+function send(e){
+ e.preventDefault();
+ const n=document.getElementById('name').value,c=document.getElementById('email').value,p=document.getElementById('phone').value,m=document.getElementById('msg').value;
+ const subject=encodeURIComponent('Solicitud de asesoría - '+n);
+ const body=encodeURIComponent('Nombre/Empresa: '+n+'\\nCorreo: '+c+'\\nTeléfono: '+p+'\\n\\nNecesidad:\\n'+m);
+ location.href='mailto:sag2009@live.com.mx?subject='+subject+'&body='+body;
+}
+</script>
+</body>
+</html>
