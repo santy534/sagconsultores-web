@@ -155,37 +155,38 @@ footer{background:#061528;color:#b9c7d4;padding:30px 0}.foot{display:flex;justif
 <script>
 function send(e){
  e.preventDefault();
- const n = document.getElementById('name').value;
- const c = document.getElementById('email').value;
- const p = document.getElementById('phone').value;
- const m = document.getElementById('msg').value;
-
- const subject = encodeURIComponent('Solicitud de asesoría - ' + n);
- const body = encodeURIComponent(
-   'Nombre/Empresa: ' + n +
-   '\\nCorreo: ' + c +
-   '\\nTeléfono: ' + p +
-   '\\n\\nNecesidad:\\n' + m
- );
-
- const mailto = 'mailto:sag2009@live.com.mx?subject=' +
-                subject + '&body=' + body;
-
- let enviado = false;
-
- function abrirCorreo(){
-   if (!enviado) {
-     enviado = true;
-     location.href = mailto;
-   }
- }
-
+ 
  // Conversión de Google Ads
  gtag('event', 'conversion', {
    'send_to': 'AW-18410558220/QpYeCJfjkuocEYm68pE',
    'value': 1.0,
    'currency': 'MXN',
-   'event_callback': abrirCorreo
+  const n = document.getElementById('name').value;
+  const c = document.getElementById('email').value;
+  const p = document.getElementById('phone').value;
+  const m = document.getElementById('msg').value;
+
+  // Registrar conversión de Google Ads
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18410558220/QpYeCJfjkuocEYm68pE',
+    'value': 1.0,
+    'currency': 'MXN'
+  });
+
+  const subject = encodeURIComponent('Solicitud de asesoría - ' + n);
+
+  const body = encodeURIComponent(
+    'Nombre/Empresa: ' + n +
+    '\nCorreo: ' + c +
+    '\nTeléfono: ' + p +
+    '\n\nNecesidad:\n' + m
+  );
+
+  // Abrir el correo después de registrar la conversión
+  setTimeout(function(){
+    location.href = 'mailto:sag2009@live.com.mx?subject=' + subject + '&body=' + body;
+  }, 500);
+}  'event_callback': abrirCorreo
  });
 
  // Respaldo por si Google tarda en responder
