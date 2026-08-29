@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18410558220"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18410558220');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="SAG Consultores: servicios contables, fiscales, nómina, IMSS, INFONAVIT, devolución de IVA y consultoría empresarial en Ciudad de México y Pachuca.">
@@ -146,10 +155,41 @@ footer{background:#061528;color:#b9c7d4;padding:30px 0}.foot{display:flex;justif
 <script>
 function send(e){
  e.preventDefault();
- const n=document.getElementById('name').value,c=document.getElementById('email').value,p=document.getElementById('phone').value,m=document.getElementById('msg').value;
- const subject=encodeURIComponent('Solicitud de asesoría - '+n);
- const body=encodeURIComponent('Nombre/Empresa: '+n+'\\nCorreo: '+c+'\\nTeléfono: '+p+'\\n\\nNecesidad:\\n'+m);
- location.href='mailto:sag2009@live.com.mx?subject='+subject+'&body='+body;
+ const n = document.getElementById('name').value;
+ const c = document.getElementById('email').value;
+ const p = document.getElementById('phone').value;
+ const m = document.getElementById('msg').value;
+
+ const subject = encodeURIComponent('Solicitud de asesoría - ' + n);
+ const body = encodeURIComponent(
+   'Nombre/Empresa: ' + n +
+   '\\nCorreo: ' + c +
+   '\\nTeléfono: ' + p +
+   '\\n\\nNecesidad:\\n' + m
+ );
+
+ const mailto = 'mailto:sag2009@live.com.mx?subject=' +
+                subject + '&body=' + body;
+
+ let enviado = false;
+
+ function abrirCorreo(){
+   if (!enviado) {
+     enviado = true;
+     location.href = mailto;
+   }
+ }
+
+ // Conversión de Google Ads
+ gtag('event', 'conversion', {
+   'send_to': 'AW-18410558220/QpYeCJfjkuocEYm68pE',
+   'value': 1.0,
+   'currency': 'MXN',
+   'event_callback': abrirCorreo
+ });
+
+ // Respaldo por si Google tarda en responder
+ setTimeout(abrirCorreo, 1000);
 }
 </script>
 </body>
