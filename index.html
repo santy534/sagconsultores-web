@@ -161,13 +161,6 @@ function send(e){
   const p = document.getElementById('phone').value;
   const m = document.getElementById('msg').value;
 
-  // Registrar conversión de Google Ads
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18410558220/QpYeCJfjkuocEYm68pE',
-    'value': 1.0,
-    'currency': 'MXN'
-  });
-
   const subject = encodeURIComponent('Solicitud de asesoría - ' + n);
 
   const body = encodeURIComponent(
@@ -177,10 +170,26 @@ function send(e){
     '\n\nNecesidad:\n' + m
   );
 
-  // Abrir el correo después de registrar la conversión
-  setTimeout(function(){
-    location.href = 'mailto:sag2009@live.com.mx?subject=' + subject + '&body=' + body;
-  }, 500);
+  const mailto = 'mailto:sag2009@live.com.mx?subject=' +
+                 subject + '&body=' + body;
+
+  let abierto = false;
+
+  function abrirCorreo(){
+    if (abierto) return;
+    abierto = true;
+    window.location.href = mailto;
+  }
+
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18410558220/QpYeCJfjkuocEYm68pE',
+    'value': 1.0,
+    'currency': 'MXN',
+    'event_callback': abrirCorreo
+  });
+
+  // Respaldo por si Google no ejecuta el callback
+  setTimeout(abrirCorreo, 1500);
 }
 </script>
 </body>
